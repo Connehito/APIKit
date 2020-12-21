@@ -95,7 +95,7 @@ public final class URLEncodedSerialization {
             }
 
             if let valueAsArray = value as? Array<Any> {
-                let escapedKeyForArray = escape(key) + "[]"
+                let escapedKeyForArray = escape(key + "[]")
                 return valueAsArray.map { (element: Any) -> String in
                     let elementAsString = (element as? String) ?? "\(element)"
                     return "\(escapedKeyForArray)=\(escape(elementAsString))"
